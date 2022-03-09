@@ -7,15 +7,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@1,422&display=swap" rel="stylesheet">
+    <script src="js/script.js"></script>
 
 </head>
-<body>
+<body onload="onBodyLoad()">
 <header>
     iTunes App Header
 </header>
 
 <main>
-    this is the main content
+    <div class="search-wrapper">
+        <input type="text" id="search-box">
+        <input type="button" value="search" onclick="onButtonClicked()">
+    </div>
+
+    <div id="result-list">
+
+    </div>
 </main>
 
 <footer>
@@ -23,3 +31,4 @@
 </footer>
 </body>
 </html>
+
