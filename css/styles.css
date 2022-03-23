@@ -24,6 +24,12 @@ html {
     /* border: 2px solid red; */
 }
 
+.song-title {
+    /* border: 1px solid; */
+    font-weight: 900;
+    font-size: 20px;
+}
+
 header, footer {
     /* flex: 1; */
     width: 100%;
@@ -112,4 +118,17 @@ input {
 div#result-list {
     flex: 1;
     overflow: auto;
+}
+
+.song-item-wrapper {
+    display: flex;
+    margin: 20px 0 0 0;
+}
+
+.song-item-wrapper > div {
+    flex: 1;
+}
+
+.song-fields {
+    margin: 0 0 0px 30px;
 }
