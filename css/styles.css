@@ -71,6 +71,12 @@ footer {
     /* flex: 1; */
 }
 
+.type-select-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
 .search-wrapper input[type=button] {
     width: 120px;
     color: #688dcd;
@@ -94,7 +100,7 @@ input[type="text"] {
     border-radius: 10px;
     color: #6495ec;
     flex: 1;
-    margin-right: 40px;
+    margin-right: 0px;
     padding: 15px;
 }
 
