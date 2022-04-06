@@ -9,9 +9,6 @@ window.onBodyLoad = (event)=>{
 window.onButtonClicked = async (event)=>{
     clearResultList();
 	
-	console.log(getSearchTerm(), 'getSearchTerm()');
-	console.log(getSearchType(), 'getSearchType()');
-	
 	const items = await searchITunes(getSearchTerm(), getSearchType());
 	
 	for (const item of items)
