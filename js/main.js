@@ -1,15 +1,22 @@
-import {
-	onBodyLoad,
-	$result_list,
-	$search_term_input,
-	$type_select_el
-}                     from "./on-body-load.js";
-import {searchITunes} from "./search-i-tunes.js";
+import {clearResultList, getSearchTerm, getSearchType, onDomLoad} from "./modules/jquery-dom-module.js";
+import {searchITunes}                                             from "./modules/itunes-api-module.js";
 
 
-window.onBodyLoad      = onBodyLoad;
-window.onButtonClicked = ()=>{
-	searchITunes($search_term_input.val(),$type_select_el.val());
-};
+window.onBodyLoad = (event)=>{
+	onDomLoad()
+}
 
-
+window.onButtonClicked = async (event)=>{
+    clearResultList();
+	
+	console.log(getSearchTerm(), 'getSearchTerm()');
+	console.log(getSearchType(), 'getSearchType()');
+	
+	const items = await searchITunes(getSearchTerm(), getSearchType());
+	
+	for (const item of items)
+	{
+		console.log(item, 'item');
+	}
+	
+}

@@ -75,6 +75,7 @@ footer {
     justify-content: flex-end;
     margin-bottom: 20px;
     /* flex: 1; */
+    min-width: 550px;
 }
 
 .type-select-wrapper {

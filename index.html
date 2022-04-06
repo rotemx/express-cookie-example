@@ -7,14 +7,11 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@1,422&display=swap" rel="stylesheet">
-	
+	x
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	
 	
 	<script type="module" src="js/main.js"></script>
-	<script type="module" src="js/on-body-load.js"></script>
-	<script type="module" src="js/create-item-html-element.js"></script>
-	<script type="module" src="js/search-i-tunes.js"></script>
 	
 </head>
 <body onload="onBodyLoad()">
@@ -38,7 +35,7 @@
 					<option value="tvShow">Tv Show</option>
 				</select>
 			</div>
-			<input type="button" value="search" onclick="onButtonClicked()">
+			<input type="button" value="search" id="searchButton" onclick="onButtonClicked()">
 		</div>
 		
 		<div id="result-list">
