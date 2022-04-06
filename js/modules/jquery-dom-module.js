@@ -31,7 +31,10 @@ function createItemHtmlElement(item) //encapsulation
 	switch(item.kind) {
 	
 	}
-	
+	if (!item.previewUrl) {
+		console.log('no previewUrl!');
+		
+	}
 	const template = `
 		<div class="song-item-wrapper">
 			<img src="${item.artworkUrl60}" height="60">
@@ -47,7 +50,8 @@ function createItemHtmlElement(item) //encapsulation
 				</div>
 			</div>
 			<div class="song-player">
-				<audio src="${item.previewUrl}" controls></audio>
+				${item.previewUrl ? '<audio src="' + item.previewUrl + '" controls></audio>' : ''}
+<!--				conditional rendering-->
 			</div>
 		</div>
 	`
