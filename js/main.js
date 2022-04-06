@@ -2,16 +2,37 @@ import {
 	clearResultList,
 	getSearchTerm,
 	getSearchType,
-	onDomLoad, renderList
-} from "./modules/jquery-dom-module.js";
-import {searchITunes}                                             from "./modules/itunes-api-module.js";
+	onDomLoad,
+	registerOnEnter,
+	renderList
+	
+}                     from "./modules/jquery-dom-module.js";
+import {searchITunes} from "./modules/itunes-api-module.js";
 
-window.onBodyLoad = (event)=>{
-	onDomLoad()
+window.onBodyLoad = (event) => {
+	onDomLoad();
+	registerOnEnter(() => {
+		alert('You pressed the E key!')
+		console.log('registerOnEnter');
+	})
 }
 
-window.onButtonClicked = async (event)=>{
-    clearResultList();
-	const items = await searchITunes(getSearchTerm(), getSearchType());
+
+const onButtonClicked  = async () => {
+	clearResultList();
+	
+	const
+		searchTerm = getSearchTerm();
+	if (!searchTerm)
+	{
+		return
+	}
+	
+	const
+		items      = await searchITunes(searchTerm, getSearchType());
+	
 	renderList(items);
-}
+};
+window.onButtonClicked = onButtonClicked
+
+

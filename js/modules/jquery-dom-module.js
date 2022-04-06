@@ -1,13 +1,33 @@
 let
 	$result_list,
 	$search_term_input,
-	$type_select_el;
+	$type_select_el,
+	onEnterFn,
+	isEnterEventRegistered
+;
+
+
+export function registerOnEnter(fn) {
+	if (typeof fn !== 'function'){
+		throw new Error('You have to provide a function to registerOnEnter!');
+	}
+	if (!isEnterEventRegistered) {
+		isEnterEventRegistered = true;
+		document.addEventListener("keyup", (event)=>{
+			if (event.key === "Enter" && onEnterFn) {
+				onEnterFn();
+			}
+		})
+	}
+	onEnterFn = fn;
+}
 
 export function onDomLoad() {
 	console.log('onDomLoad running..');
 	$result_list       = $('#result-list');
 	$search_term_input = $('#search-box');
 	$type_select_el    = $('#type-select');
+	
 }
 
 export function getSearchTerm(){
@@ -60,7 +80,8 @@ function createItemHtmlElement(item) //encapsulation
 
 export function renderList(items) {
 	if (!items || !items.length) {
-		throw new Error('No Items provided for renderList!')
+		return
+		// throw new Error('No Items provided for renderList!')
 	}
 	for (const item of items)
 	{
