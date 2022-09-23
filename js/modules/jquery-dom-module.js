@@ -42,6 +42,7 @@ export function clearResultList() {
 	$result_list.empty();
 }
 
+// props - inputs - params
 function createItemHtmlElement(item) //encapsulation
 {
 	if (!item) {
@@ -53,8 +54,9 @@ function createItemHtmlElement(item) //encapsulation
 	}
 	if (!item.previewUrl) {
 		console.log('no previewUrl!');
-		
 	}
+	
+	// reusable
 	const template = `
 		<div class="song-item-wrapper">
 			<img src="${item.artworkUrl60}" height="60">
