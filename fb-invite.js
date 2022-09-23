@@ -8,12 +8,12 @@ function loadJquery()
 		} : t(e)
 	}("undefined" != typeof window ? window : this, function (C, e) {
 		"use strict";
-		var t                                                                                             = [], r = Object.getPrototypeOf, s                                                          = t.slice, g = t.flat ? function (e) {
+		var t                                                                                             = [], r                                                                                     = Object.getPrototypeOf, s                                                          = t.slice, g = t.flat ? function (e) {
 			    return t.flat.call(e)
 		    } : function (e) {
 			    return t.concat.apply([], e)
 		    }, u = t.push, i = t.indexOf, n = {}, o = n.toString, y = n.hasOwnProperty, a = y.toString, l = a.call(Object),
-		    v                                                                                             = {}, m                                                                                     = function (e) {
+		    v                                                                                             = {}, m = function (e) {
 			    return "function" == typeof e && "number" != typeof e.nodeType && "function" != typeof e.item
 		    }, x                                                                                          = function (e) {
 			    return null != e && e === e.window
@@ -120,11 +120,11 @@ function loadJquery()
 		});
 		var d = function (n) {
 			var e, d, b, o, i, h, f, g, w, u, l, T, C, a, E, y, s, c, v, S = "sizzle" + 1 * new Date, p = n.document,
-			    k                                                                                       = 0, r                                                                                = 0, m                                                                         = ue(), x = ue(), A = ue(),
+			    k                                                                                       = 0, r = 0, m = ue(), x                                                               = ue(), A = ue(),
 			    N                                                                                       = ue(), j = function (e, t) {
 				    return e === t && (l = !0), 0
-			    }, D                                                                                    = {}.hasOwnProperty, t                                                             = [], q                                                     = t.pop,
-			    L                                                                                       = t.push, H                                                                           = t.push, O = t.slice,
+			    }, D                                                                                    = {}.hasOwnProperty, t                                                             = [], q = t.pop,
+			    L                                                                                       = t.push, H                                                                           = t.push, O                                                               = t.slice,
 			    P                                                                                       = function (e, t) {
 				    for (var n = 0, r = e.length; n < r; n++) if (e[n] === t) return n;
 				    return -1
@@ -477,7 +477,7 @@ function loadJquery()
 							return !!e.parentNode
 						} : function (e, t, n) {
 							var r, i, o, a, s, u, l = v !== m ? "nextSibling" : "previousSibling", c = e.parentNode,
-							    f                                                                    = x && e.nodeName.toLowerCase(), p = !n && !x, d = !1;
+							    f                                                                    = x && e.nodeName.toLowerCase(), p = !n && !x, d                   = !1;
 							if (c)
 							{
 								if (v)
@@ -644,7 +644,7 @@ function loadJquery()
 			function Ce(d, h, g, y, v, e)
 			{
 				return y && !y[S] && (y = Ce(y)), v && !v[S] && (v = Ce(v, e)), le(function (e, t, n, r) {
-					var i, o, a, s = [], u = [], l = t.length, c = e || function (e, t, n) {
+					var i, o, a, s                               = [], u = [], l               = t.length, c = e || function (e, t, n) {
 						    for (var r = 0, i = t.length; r < i; r++) se(e, t[r], n);
 						    return n
 					    }(h || "*", n.nodeType ? [n] : n, []), f = !d || !e && h ? c : Te(c, s, d, n, r),
@@ -1241,7 +1241,7 @@ function loadJquery()
 		                                                      });
 		var ee                                                              = /[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/.source,
 		    te = new RegExp("^(?:([+-])=|)(" + ee + ")([a-z%]*)$", "i"), ne = ["Top", "Right", "Bottom", "Left"],
-		    re                                                              = E.documentElement, ie                                      = function (e) {
+		    re                                                              = E.documentElement, ie = function (e) {
 			    return S.contains(e.ownerDocument, e)
 		    }, oe                                                           = {composed: !0};
 		re.getRootNode && (ie = function (e) {
@@ -1717,7 +1717,7 @@ function loadJquery()
 			    for (i in t) o[i] = e.style[i], e.style[i] = t[i];
 			    for (i in r = n.call(e), t) e.style[i] = o[i];
 			    return r
-		    }, We                                                               = new RegExp(ne.join("|"), "i"), Fe = "[\\x20\\t\\r\\n\\f]",
+		    }, We                                                               = new RegExp(ne.join("|"), "i"), Fe                           = "[\\x20\\t\\r\\n\\f]",
 		    $e                                                                  = new RegExp("^" + Fe + "+|((?:^|[^\\\\])(?:\\\\.)*)" + Fe + "+$", "g");
 		
 		function Be(e, t, n)
@@ -1806,7 +1806,7 @@ function loadJquery()
 		function Ze(e, t, n)
 		{
 			var r = Me(e), i = (!v.boxSizingReliable() || n) && "border-box" === S.css(e, "boxSizing", !1, r), o = i,
-			    a                                                                                                = Be(e, t, r), s = "offset" + t[0].toUpperCase() + t.slice(1);
+			    a                                                                                                = Be(e, t, r), s                                                                               = "offset" + t[0].toUpperCase() + t.slice(1);
 			if (Pe.test(a))
 			{
 				if (!n) return a;
@@ -2345,7 +2345,7 @@ function loadJquery()
 				return e.textContent
 			}).join("\n") : e)), t
 		};
-		var St                                           = /\[\]$/, kt                             = /\r?\n/g, At = /^(?:submit|button|image|reset|file)$/i,
+		var St                                           = /\[\]$/, kt = /\r?\n/g, At              = /^(?:submit|button|image|reset|file)$/i,
 		    Nt                                           = /^(?:input|select|textarea|keygen)/i;
 		
 		function jt(n, e, r, i)
@@ -2386,7 +2386,7 @@ function loadJquery()
 			}
 		               });
 		var Dt = /%20/g, qt = /#.*$/, Lt = /([?&])_=[^&]*/, Ht = /^(.*?):[ \t]*([^\r\n]*)$/gm, Ot = /^(?:GET|HEAD)$/,
-		    Pt                                                                                    = /^\/\//, Rt                                                                      = {}, Mt                                                             = {}, It = "*/".concat("*"), Wt = E.createElement("a");
+		    Pt                                                                                    = /^\/\//, Rt = {}, Mt = {}, It = "*/".concat("*"), Wt = E.createElement("a");
 		
 		function Ft(o)
 		{
@@ -2877,16 +2877,20 @@ function findInviteBtn()
 }
 
 const
-	NUMBER_OF_OPERATIONS = 100,
-	PAGES_TO_SCROLL = 50;
+	NUMBER_OF_OPERATIONS = 150,
+	PAGES_TO_SCROLL      = 200
+;
 
 loadJquery();
-findInviteBtn();
 
 
 for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 {
-	console.log(`OPERATION ${i} `);
+	console.log(`===OPERATION ${i} `);
+	
+	findInviteBtn();
+	console.log(inviteBtn[0], 'inviteBtn[0]');
+	
 	$(inviteBtn).click();
 	await wait(5);
 	
@@ -2895,15 +2899,16 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 		sendInvitesBtn = $('*:contains("Send invites")').last();
 	
 	allFriendsBtn.click();
-	await wait(3);
+	await wait(10);
 	
-	const	list           = $('div:contains("Select all")').last().parent().parent().parent().parent().parent().parent();
-	console.log(list, 'list');
+	const list = $('div:contains("Select all")').last().parent().parent().parent().parent().parent().parent().last();
+	console.log(list[0], 'list[0]');
+	
 	for (let i = 0; i < PAGES_TO_SCROLL; i++)
 	{
 		console.log(`scrolling ${i}...`);
 		list.scrollTop(list[0].scrollHeight);
-		await wait(1);
+		await wait(5);
 	}
 	await wait(1);
 	selectNextBtn = $('div:contains("Select Next")').last();
