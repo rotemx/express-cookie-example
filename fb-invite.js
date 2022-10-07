@@ -2876,7 +2876,7 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 		discussionBtn = $($('div:contains("Discussion")').last()),
 		bar           = discussionBtn.parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent(),
 		inviteBtn     = bar.find('div:contains("Invite")').last();
-	
+	//
 	console.log('inviteBtn[0]', inviteBtn[0]);
 	
 	$(inviteBtn).click();
@@ -2890,11 +2890,14 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 	await wait(3);
 	
 	const list = $('div:contains("Select all")').last().parent().parent().parent().parent().parent().parent().last();
-	console.log(list[0], 'list[0]');
+	if (list[0]) {
+		console.log('LIST FOUND');
+	}
+	// console.log(list[0], 'list[0]');
 	
 	for (let i = 0; i < 10000; i++)
 	{
-		console.log(`scrolling ${i} of 10000... `);
+		// console.log(`scrolling ${i} of 10000... `);
 		list.scrollTop(list[0].scrollHeight);
 		const selectNextBtn = $('div:contains("Select Next")').last();
 		selectNextBtn.click();
@@ -2906,10 +2909,9 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 		}
 		await wait(2);
 	}
-	await wait(3);
+	await wait(2);
 	
-	await wait(1);
 	sendInvitesBtn.click();
-	await wait(10);
+	await wait(4);
 }
 
