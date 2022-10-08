@@ -2886,6 +2886,9 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 		allFriendsBtn  = $('div:contains("All Friends")').last(),
 		sendInvitesBtn = $('*:contains("Send invites")').last();
 	
+	if (!sendInvitesBtn || ! allFriendsBtn) {
+		console.error('INVITE BUTTON NOT FOUND!');
+	}
 	allFriendsBtn.click();
 	await wait(2);
 	
@@ -2913,6 +2916,6 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 	await wait(2);
 	
 	sendInvitesBtn.click();
-	await wait(4);
+	await wait(6);
 }
 
