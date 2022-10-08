@@ -2908,7 +2908,7 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 			console.log(isSelectionComplete, `isSelectionComplete. BREAKING at page ${i} `);
 			break;
 		}
-		await wait(.1);
+		await wait(.2);
 	}
 	await wait(2);
 	
