@@ -2863,13 +2863,14 @@ async function wait(sec)
 	})
 }
 
-const NUMBER_OF_OPERATIONS = 150;
+const NUMBER_OF_OPERATIONS = 1000;
 
 loadJquery();
 
 
 for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 {
+	console.time('operation')
 	console.log(`===OPERATION ${i} of ${NUMBER_OF_OPERATIONS}  `);
 	
 	const
@@ -2877,8 +2878,10 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 		bar           = discussionBtn.parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent().parent(),
 		inviteBtn     = bar.find('div:contains("Invite")').last();
 	//
-	console.log('inviteBtn[0]', inviteBtn[0]);
-	
+	 if (!discussionBtn || ! bar || !inviteBtn) {
+		console.error('INVITE BUTTON NOT FOUND');
+	 }
+	 
 	$(inviteBtn).click();
 	await wait(3);
 	
@@ -2887,7 +2890,7 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 		sendInvitesBtn = $('*:contains("Send invites")').last();
 	
 	if (!sendInvitesBtn || ! allFriendsBtn) {
-		console.error('INVITE BUTTON NOT FOUND!');
+		console.error('send INVITE BUTTON NOT FOUND!');
 	}
 	allFriendsBtn.click();
 	await wait(2);
@@ -2911,11 +2914,14 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 			console.log(isSelectionComplete, `isSelectionComplete. BREAKING at page ${i} `);
 			break;
 		}
-		await wait(.2);
+		await wait(.1);
 	}
 	await wait(2);
 	
 	sendInvitesBtn.click();
-	await wait(6);
+	await wait(4);
+	console.log(`operation ${i}:`);
+	console.timeEnd('operation')
+	
 }
 
