@@ -2854,14 +2854,6 @@ function loadJquery()
 	});
 }
 
-async function wait(sec)
-{
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve()
-		}, sec * 1000)
-	})
-}
 
 const NUMBER_OF_OPERATIONS = 1000;
 
@@ -2870,6 +2862,15 @@ loadJquery();
 
 for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 {
+	function wait(sec)
+	{
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve()
+			}, sec * 1000)
+		})
+	}
+	
 	console.time('operation')
 	console.log(`===OPERATION ${i} of ${NUMBER_OF_OPERATIONS}  `);
 	
@@ -2914,7 +2915,7 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 			console.log(isSelectionComplete, `isSelectionComplete. BREAKING at page ${i} `);
 			break;
 		}
-		await wait(.1);
+		await wait(.05);
 	}
 	await wait(2);
 	
