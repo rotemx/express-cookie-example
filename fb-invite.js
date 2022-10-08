@@ -2880,14 +2880,14 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 	console.log('inviteBtn[0]', inviteBtn[0]);
 	
 	$(inviteBtn).click();
-	await wait(5);
+	await wait(3);
 	
 	const
 		allFriendsBtn  = $('div:contains("All Friends")').last(),
 		sendInvitesBtn = $('*:contains("Send invites")').last();
 	
 	allFriendsBtn.click();
-	await wait(3);
+	await wait(2);
 	
 	const list = $('div:contains("Select all")').last().parent().parent().parent().parent().parent().parent().last();
 	if (list[0]) {
@@ -2895,10 +2895,11 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 	}
 	// console.log(list[0], 'list[0]');
 	
-	for (let i = 0; i < 10000; i++)
+	
+	for (let i = 0; i < 100000; i++)
 	{
 		// console.log(`scrolling ${i} of 10000... `);
-		list.scrollTop(list[0].scrollHeight);
+		list.scrollTop(999999999);
 		const selectNextBtn = $('div:contains("Select Next")').last();
 		selectNextBtn.click();
 		let isSelectionComplete = !($('div:contains("50 INVITES LEFT")').length || $('div:contains("500 INVITES LEFT")').length) && $('div:contains("0 INVITES LEFT")').length;
@@ -2907,7 +2908,7 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 			console.log(isSelectionComplete, `isSelectionComplete. BREAKING at page ${i} `);
 			break;
 		}
-		await wait(2);
+		await wait(.1);
 	}
 	await wait(2);
 	
