@@ -2871,10 +2871,10 @@ function wait(sec)
 
 for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 {
-	await wait(8);
 	
-	// console.time('operation')
-	console.log(`===OPERATION ${i} of ${NUMBER_OF_OPERATIONS}  `);
+	const opId = 'operation' + i;
+	console.time(opId)
+	console.log(`==> STARTING OPERATION ${i} of ${NUMBER_OF_OPERATIONS}  `);
 	
 	const
 		discussionBtn = $($('div:contains("Discussion")').last()),
@@ -2887,7 +2887,7 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 	}
 	
 	$(inviteBtn).click();
-	await wait(3);
+	await wait(6);
 	
 	const
 		allFriendsBtn  = $('div:contains("All Friends")').last(),
@@ -2898,7 +2898,7 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 		console.error('send INVITE BUTTON NOT FOUND!');
 	}
 	allFriendsBtn.click();
-	await wait(2);
+	await wait(3);
 	
 	const list = $('div:contains("Select all")').last().parent().parent().parent().parent().parent().parent().last();
 	if (list[0])
@@ -2910,8 +2910,9 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 	
 	for (let i = 0; i < 100000; i++)
 	{
-		
-		// console.log(`scrolling ${i} of 10000... `);
+		if (i%10 === 0) {
+			console.log(`scrolling ${i} of 10000... `);
+		}
 		list.scrollTop(999999999999999999);
 		const selectNextBtn = $('div:contains("Select Next")').last();
 		selectNextBtn.click();
@@ -2921,15 +2922,16 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 			console.log(isSelectionComplete, `isSelectionComplete. BREAKING at page ${i} `);
 			break;
 		}
-		await wait(.1);
+		await wait(.4);
+		
 	}
 	await wait(4);
 	
 	console.log('SENDING INVITES...');
 	sendInvitesBtn.click();
-	await wait(8);
-	console.log(`operation ${i}:`);
-	// console.timeEnd('operation')
+	console.log(opId + ' time');
+	console.timeEnd(opId)
 	
+	await wait(12);
 }
 
