@@ -2916,7 +2916,7 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 		list.scrollTop(999999999999999999);
 		const selectNextBtn = $('div:contains("Select Next")').last();
 		selectNextBtn.click();
-		const isSelectionComplete = !($('div:contains("50 INVITES LEFT")').length || $('div:contains("500 INVITES LEFT")').length) && $('div:contains("0 INVITES LEFT")').length;
+		const isSelectionComplete = $('div:contains("0 INVITES LEFT")').length || !($('div:contains("50 INVITES LEFT")').length || $('div:contains("500 INVITES LEFT")').length);
 		if (isSelectionComplete)
 		{
 			console.log(isSelectionComplete, `isSelectionComplete. BREAKING at page ${i} `);
