@@ -2887,7 +2887,7 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 	}
 	
 	$(inviteBtn).click();
-	await wait(10);
+	await wait(8);
 	
 	const
 		allFriendsBtn  = $('div:contains("All Friends")').last(),
@@ -2934,17 +2934,17 @@ for (let i = 0; i < NUMBER_OF_OPERATIONS; i++)
 		{
 			console.log(isSelectionComplete, `isSelectionComplete. BREAKING at page ${i} `);
 			break;
-		}
-		await wait(.2);
+		// }
+		await wait(.1);
 		
 	}
-	await wait(3);
+	await wait(5);
 	
 	console.log('SENDING INVITES...');
 	sendInvitesBtn.click();
 	console.log(opId + ' time');
 	console.timeEnd(opId)
 	
-	await wait(10);
+	await wait(8);
 }
 
